@@ -1,0 +1,59 @@
+{
+  "manifest_version": 2,
+  "name": "Calendar Painter",
+  "description": "Kolorowanie pojedynczych dni i zakresów dat w kalendarzu Thunderbirda. Pierwsza wersja przygotowana do publikacji na GitHubie.",
+  "version": "1.1.4",
+  "applications": {
+    "gecko": {
+      "id": "calendar-painter@artur.local",
+      "strict_min_version": "153.0",
+      "strict_max_version": "153.*"
+    }
+  },
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "experiment_apis": {
+    "calendarPainter": {
+      "schema": "api/calendarPainter/schema.json",
+      "parent": {
+        "scopes": [
+          "addon_parent"
+        ],
+        "paths": [
+          [
+            "calendarPainter"
+          ]
+        ],
+        "script": "api/calendarPainter/implementation.js"
+      }
+    }
+  },
+  "browser_action": {
+    "type": "button",
+    "default_label": "Calendar Painter",
+    "default_title": "Calendar Painter",
+    "default_icon": {
+      "16": "icons/calendar-painter-16.png",
+      "32": "icons/calendar-painter-32.png",
+      "48": "icons/calendar-painter-48.png",
+      "64": "icons/calendar-painter-64.png",
+      "96": "icons/calendar-painter-96.png",
+      "128": "icons/calendar-painter-128.png"
+    },
+    "default_popup": "ui/popup.html",
+    "allowed_spaces": [
+      "calendar"
+    ]
+  },
+  "icons": {
+    "16": "icons/calendar-painter-16.png",
+    "32": "icons/calendar-painter-32.png",
+    "48": "icons/calendar-painter-48.png",
+    "64": "icons/calendar-painter-64.png",
+    "96": "icons/calendar-painter-96.png",
+    "128": "icons/calendar-painter-128.png"
+  }
+}
