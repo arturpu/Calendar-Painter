@@ -1,5 +1,13 @@
 # Calendar Painter
 
+## Download / Pobierz
+
+[⬇️ Download the latest version / Pobierz najnowszą wersję](https://github.com/arturpu/Calendar-Painter/releases/latest)
+
+Open the latest release and download the `.xpi` file.
+
+Otwórz najnowsze wydanie i pobierz plik `.xpi`.
+
 ## English
 
 Calendar Painter is a Thunderbird extension for visually marking days in the built-in calendar without creating artificial all-day events.
