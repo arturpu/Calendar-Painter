@@ -1,13 +1,12 @@
 {
   "manifest_version": 2,
-  "name": "Calendar Painter",
-  "description": "Kolorowanie pojedynczych dni i zakresów dat w kalendarzu Thunderbirda. Pierwsza wersja przygotowana do publikacji na GitHubie.",
-  "version": "1.1.4",
+  "name": "__MSG_extensionName__",
+  "description": "__MSG_extensionDescription__",
+  "version": "1.1.7",
   "applications": {
     "gecko": {
       "id": "calendar-painter@artur.local",
-      "strict_min_version": "153.0",
-      "strict_max_version": "153.*"
+      "strict_min_version": "153.0"
     }
   },
   "background": {
@@ -33,8 +32,8 @@
   },
   "browser_action": {
     "type": "button",
-    "default_label": "Calendar Painter",
-    "default_title": "Calendar Painter",
+    "default_label": "__MSG_extensionName__",
+    "default_title": "__MSG_extensionName__",
     "default_icon": {
       "16": "icons/calendar-painter-16.png",
       "32": "icons/calendar-painter-32.png",
@@ -55,5 +54,6 @@
     "64": "icons/calendar-painter-64.png",
     "96": "icons/calendar-painter-96.png",
     "128": "icons/calendar-painter-128.png"
-  }
+  },
+  "default_locale": "en"
 }

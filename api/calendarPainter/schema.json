@@ -1,0 +1,63 @@
+[
+  {
+    "namespace": "calendarPainter",
+    "functions": [
+      {
+        "name": "setLanguage",
+        "type": "function",
+        "async": true,
+        "parameters": [
+          {
+            "name": "language",
+            "type": "string"
+          }
+        ]
+      },
+      {
+        "name": "start",
+        "type": "function",
+        "async": true,
+        "parameters": []
+      },
+      {
+        "name": "setMode",
+        "type": "function",
+        "async": true,
+        "parameters": [
+          {
+            "name": "mode",
+            "type": "string"
+          },
+          {
+            "name": "color",
+            "type": "string",
+            "optional": true
+          }
+        ]
+      },
+      {
+        "name": "getState",
+        "type": "function",
+        "async": true,
+        "parameters": []
+      },
+      {
+        "name": "stopMode",
+        "type": "function",
+        "async": true,
+        "parameters": []
+      },
+      {
+        "name": "setTodayRing",
+        "type": "function",
+        "async": true,
+        "parameters": [
+          {
+            "name": "enabled",
+            "type": "boolean"
+          }
+        ]
+      }
+    ]
+  }
+]

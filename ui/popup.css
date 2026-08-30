@@ -1,0 +1,36 @@
+:root { color-scheme: light dark; font: message-box; }
+body { width: 280px; margin: 0; padding: 12px; background: Canvas; color: CanvasText; }
+header { display:flex; align-items:center; gap:10px; margin-bottom:12px; }
+header img { width:34px; height:34px; }
+header strong, header small { display:block; }
+header small { margin-top:2px; opacity:.65; }
+.caption { font-weight:600; margin-bottom:7px; }
+.palette { display:grid; grid-template-columns:repeat(8,1fr); gap:6px; margin-bottom:12px; }
+.swatch { width:27px; height:27px; border:1px solid rgba(0,0,0,.45); border-radius:5px; padding:0; cursor:pointer; }
+.swatch.selected { outline:3px solid Highlight; outline-offset:1px; }
+.actions { display:grid; gap:7px; }
+.actions button { min-height:34px; text-align:left; padding:5px 10px; cursor:pointer; }
+footer { margin-top:10px; font-size:11px; line-height:1.35; opacity:.6; }
+
+
+.today-option {
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid color-mix(in srgb, CanvasText 18%, transparent);
+}
+.today-option label {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.today-option input {
+  margin: 0;
+}
+.today-option small {
+  display: block;
+  margin: 5px 0 0 23px;
+  opacity: .62;
+  line-height: 1.3;
+}

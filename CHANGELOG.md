@@ -1,28 +1,19 @@
 # Changelog
 
-All notable changes to Calendar Painter will be documented in this file.
+## 1.1.7
+- Added full English interface localization.
+- Kept Polish interface localization.
+- Added automatic language selection based on Thunderbird's UI language.
+- Localized toolbar popup, color names, context menu, alerts, toasts and extension description.
+- Added bilingual README.
+- Preserved all 1.1.6 painting, week/day view and today-circle behavior.
 
-## [1.1-alpha5] - 2026-07-22
+## 1.1.6
+- Improved Day/Week view coloring so Thunderbird's grid remains readable.
+- Kept Month view behavior unchanged.
 
-### Added
+## 1.1.5
+- Added Day/Week view support for saved day colors.
 
-- First public GitHub release.
-- Toolbar button available in Thunderbird's Calendar space.
-- Painting of individual days.
-- Painting of date ranges.
-- Eraser mode.
-- Persistent storage of painted days.
-- Non-blocking toast notifications.
-- Dedicated PNG icon sizes for correct Thunderbird rendering.
-
-### Changed
-
-- Removed the startup alert that required pressing OK.
-- Improved toolbar integration.
-- Prepared project documentation for GitHub.
-
-### Known limitations
-
-- Tested only on Windows 11.
-- Linux and macOS testing is still required.
-- The extension interface is currently Polish-only.
+## 1.1.4
+- Removed strict maximum Thunderbird version to avoid unnecessary disabling after ordinary updates.
