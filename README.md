@@ -3,6 +3,9 @@
 ## English
 
 Calendar Painter is a Thunderbird extension for visually marking days in the built-in calendar without creating artificial all-day events.
+## Screenshots
+
+![Calendar Painter overview](screenshots/calendar-painter-overview.png)
 
 ### Features
 - Paint individual days.
