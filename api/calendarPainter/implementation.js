@@ -385,6 +385,93 @@ function applyTodayRing(box) {
   box.appendChild(ring);
 }
 
+function removeMiniTodayRing(document) {
+  try {
+    for (const ring of document.querySelectorAll(".calendar-painter-mini-today-ring")) {
+      ring.remove();
+    }
+
+    for (const cell of document.querySelectorAll('[data-calendar-painter-mini-positioned="true"]')) {
+      cell.style.removeProperty("position");
+      cell.removeAttribute("data-calendar-painter-mini-positioned");
+    }
+  } catch (e) {}
+}
+
+function createMiniRoughTodayRing(document) {
+  const ns = "http://www.w3.org/2000/svg";
+  const svg = document.createElementNS(ns, "svg");
+  svg.classList.add("calendar-painter-mini-today-ring");
+  svg.setAttribute("viewBox", "0 0 30 23");
+  svg.setAttribute("aria-hidden", "true");
+
+  Object.assign(svg.style, {
+    position: "absolute",
+    width: "30px",
+    height: "23px",
+    left: "50%",
+    top: "46%",
+    transform: "translate(-50%, -50%) rotate(-6deg)",
+    zIndex: "20",
+    overflow: "visible",
+    pointerEvents: "none"
+  });
+
+  const p1 = document.createElementNS(ns, "path");
+  p1.setAttribute(
+    "d",
+    "M2 12 C3 4, 9 2, 15 2 C23 2, 28 5, 28 11 " +
+    "C28 17, 23 21, 15 21 C8 21, 3 18, 2 12"
+  );
+  p1.setAttribute("fill", "none");
+  p1.setAttribute("stroke", "#c91f24");
+  p1.setAttribute("stroke-width", "1.7");
+  p1.setAttribute("stroke-linecap", "round");
+  p1.setAttribute("stroke-linejoin", "round");
+
+  const p2 = document.createElementNS(ns, "path");
+  p2.setAttribute(
+    "d",
+    "M3 13 C2 6, 8 3, 15 2 C22 1, 28 4, 29 10 " +
+    "C30 16, 23 21, 16 22 C9 23, 4 19, 3 13"
+  );
+  p2.setAttribute("fill", "none");
+  p2.setAttribute("stroke", "#ef4740");
+  p2.setAttribute("stroke-width", "0.75");
+  p2.setAttribute("stroke-linecap", "round");
+  p2.setAttribute("stroke-linejoin", "round");
+  p2.setAttribute("opacity", "0.72");
+
+  svg.append(p1, p2);
+  return svg;
+}
+
+function refreshMiniTodayRing(document) {
+  removeMiniTodayRing(document);
+  if (!readTodayRingEnabled()) return;
+
+  // Thunderbird's mini-month marks today's TD with today="true".
+  // Keep Thunderbird's own selected/today styling and draw our small
+  // hand-drawn ring over the day number.
+  let cells = [];
+  try {
+    cells = [...document.querySelectorAll(
+      'calendar-minimonth .minimonth-day[today="true"], .minimonth-day[today="true"]'
+    )];
+  } catch (e) {}
+
+  for (const cell of cells) {
+    try {
+      const win = cell.ownerDocument.defaultView;
+      if (win.getComputedStyle(cell).position === "static") {
+        cell.style.setProperty("position", "relative");
+        cell.setAttribute("data-calendar-painter-mini-positioned", "true");
+      }
+      cell.appendChild(createMiniRoughTodayRing(cell.ownerDocument));
+    } catch (e) {}
+  }
+}
+
 function refreshTodayRing(document) {
   const enabled = readTodayRingEnabled();
   const boxes = document.querySelectorAll("calendar-month-day-box");
@@ -429,6 +516,8 @@ function refreshTodayRing(document) {
   for (const box of targets) {
     applyTodayRing(box);
   }
+
+  refreshMiniTodayRing(document);
 }
 
 

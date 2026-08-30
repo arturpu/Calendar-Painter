@@ -1,19 +1,8 @@
 # Calendar Painter
 
-## Download / Pobierz
-
-[⬇️ Download the latest version / Pobierz najnowszą wersję](https://github.com/arturpu/Calendar-Painter/releases/latest)
-
-Open the latest release and download the `.xpi` file.
-
-Otwórz najnowsze wydanie i pobierz plik `.xpi`.
-
 ## English
 
 Calendar Painter is a Thunderbird extension for visually marking days in the built-in calendar without creating artificial all-day events.
-## Screenshots
-
-![Calendar Painter overview](screenshots/calendar-painter-overview.png)
 
 ### Features
 - Paint individual days.
@@ -21,7 +10,7 @@ Calendar Painter is a Thunderbird extension for visually marking days in the bui
 - Erase applied colors.
 - Colors persist after restarting Thunderbird.
 - Saved colors are also reflected in Day/Week view.
-- Optional hand-drawn red circle around today's date.
+- Optional hand-drawn red circle marking today in both the main calendar and the sidebar mini-calendar.
 - Polish and English interface; the extension follows Thunderbird's UI language.
 - Toolbar button in the Calendar space.
 
